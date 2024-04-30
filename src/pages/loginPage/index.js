@@ -1,20 +1,33 @@
-import React, { useContext } from 'react'
-import AuthContext from '../../context/AuthContext'
+import React, { useContext } from 'react';
+import styles from './loginstyles.module.css';
+import logo from './img/logo-removebg-preview.png'; // Importe a imagem aqui
+import AuthContext from '../../context/AuthContext';
 
 const LoginPage = () => {
-  let {loginUser} = useContext(AuthContext)
-  let {user} = useContext(AuthContext)
+  const { loginUser, user } = useContext(AuthContext);
+
+
   return (
-    <>
-        <div>Olá Mundo</div>
-        <form onSubmit={loginUser}>
-            {user ? <p>Você está logado!</p> : ''}
-            <input type='email' name='email' placeholder='Email'/>
-            <input type='password' name='password' placeholder='Senha'/>
-            <button>Enviar</button>
-        </form>
-    </>
-  )
+    <div className={styles.corpo}>
+      <img className={styles.imagem} src={logo} alt="" />
+
+      <form onSubmit={loginUser} className={styles.loginContainer}>
+        <h2 className={styles.login}>Login</h2>
+        {user ? <p>Você está logado!</p> : ''}
+        <div className={styles.campos}>
+          <div className={styles.inputField}>
+            <input type='email' name='email' placeholder='Email' />
+            <span className={styles.nome}>Email</span>
+          </div>
+          <div className={styles.inputField}>
+            <input type='password' name='password' placeholder='Senha' />
+            <span className={styles.nome}>Senha</span>
+          </div>
+        </div>
+        <button className={styles.button}>Enviar</button>
+      </form>
+    </div>
+  );
 }
 
-export default LoginPage
+export default LoginPage;

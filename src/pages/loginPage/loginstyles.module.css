@@ -1,0 +1,188 @@
+/* loginstyles.module.css */
+@font-face {
+    font-family: 'Legacy';
+    src: url('./fonts/LeagueSpartan-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: large;
+}
+
+@font-face {
+    font-family: 'Legacy-Thin';
+    src: url('./fonts/LeagueSpartan-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: large;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+.corpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f1e9d8;
+}
+
+.imagem {
+    margin-left: 30px;
+    width: 420px;
+    transition: transform 0.7s ease; /* Adicione uma transição suave */
+}
+
+.imagem:hover {
+    transform: rotate(-15deg); /* Aplica a rotação */
+}
+
+
+.loginContainer {
+    margin-left: 300px;
+    width: 420px;
+    height: 450px;
+    padding: 45px;
+    background-color: #4eb04e;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 1.5s ease; /* Adicione a animação de fade-in */
+  }
+
+
+
+.loginContainer h2 {
+    font-family: Legacy;
+    margin-top: 40px;
+    font-size: 45px;
+}
+
+.login{
+    color: white;
+    transition: color 0.3s ease;
+
+}
+
+
+.login:hover{
+    color: rgb(201, 255, 201);
+}
+
+.campos {
+    margin-top: 25px;
+}
+
+.inputField {
+    position: relative;
+    margin-bottom: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputField input {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: white;
+    font-size: 20px;
+    transition: border-bottom-color 0.3s ease;
+
+    ::placeholder {
+        /* Define a cor do placeholder */
+        color: white;
+    }
+}
+
+.inputField input:focus {
+    outline: none;
+    border-bottom-color: rgb(0, 20, 0);
+}
+
+
+.inputField:hover input {
+    border-bottom-color: rgb(1, 116, 1);
+}
+
+.inputField input::placeholder {
+    color: white;
+    /* Alterado para branco */
+    font-family: Legacy-Thin;
+    font-size: 20px;
+}
+
+
+.inputField:hover input::placeholder {
+    color: rgb(220, 220, 220);
+    /* Alterado para branco */
+}
+
+
+.button {
+    font-family: Legacy;
+    margin-top: 30px;
+    border: none;
+    color: green;
+    outline: none;
+    padding: 18px 0;
+    background-color: white;
+    cursor: pointer;
+    font-size: 26px;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.5s ease;
+    margin-bottom: 40px;
+}
+
+.button:hover {
+    background-color: rgb(0, 63, 0);
+    color: white;
+}
+
+.link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link a {
+    color: #8f8f8f;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.link a:hover {
+    color: #fff;
+}
+
+.nome {
+    display: none;
+}
+
+.inputField .eye-icon {
+    fill: white !important;
+    /* Força a cor do ícone ser branca */
+    width: 34px;
+    height: 24px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+
+.inputField .eye-icon:hover {
+    fill: #007bff;
+    /* Altera a cor do ícone ao passar o mouse */
+}
