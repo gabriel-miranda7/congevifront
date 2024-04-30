@@ -30,6 +30,7 @@
     align-items: center;
     min-height: 100vh;
     background-color: #f1e9d8;
+    overflow: hidden;
 }
 
 .imagem {
@@ -45,6 +46,7 @@
 
 .loginContainer {
     margin-left: 300px;
+    margin-right: 50px;
     width: 420px;
     height: 450px;
     padding: 45px;
@@ -185,4 +187,58 @@
 .inputField .eye-icon:hover {
     fill: #007bff;
     /* Altera a cor do ícone ao passar o mouse */
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .imagem {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .loginContainer {
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+        padding: 30px;
+    }
+
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .imagem {
+        width: 15vh;
+        margin-top: 30px;
+    }
+
+    .loginContainer {
+        margin: auto;
+        margin-top: 20px;
+        width: 60%;
+        height: 50vh;
+        border-radius: 0;
+        padding: 40px;
+    }
+
+    .corpo {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f1e9d8;
+    }
+
+    .inputField {
+        position: relative;
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    
+
 }
