@@ -27,7 +27,7 @@ export const AuthProvider = ({children}) => {
                 setAuthTokens(response.data)
                 setUser(jwtDecode(response.data.access))
                 localStorage.setItem('authTokens', JSON.stringify(response.data))
-                navigate('/');
+                navigate('/index/dash');
             }
         }catch(e){
             alert(e);
@@ -37,6 +37,10 @@ export const AuthProvider = ({children}) => {
     let updateToken = async () => {
         console.log("method called!")
         try{
+            if (!authTokens || !authTokens.refresh) {
+                logoutUser();
+                return;
+            }
             let response = await axios.post('auth/token/refresh/', {
                 refresh : authTokens.refresh
             })
@@ -49,6 +53,12 @@ export const AuthProvider = ({children}) => {
             }
         }catch(e){
             console.log(e);
+        } finally {
+            setLoading(false);
+        }
+
+        if (loading){
+            setLoading(false)
         }
         
     } 
@@ -62,13 +72,18 @@ export const AuthProvider = ({children}) => {
 
     let contextData = {
         user:user,
+        authTokens:authTokens,
         loginUser:loginUser,
         logoutUser:logoutUser,
     }
 
     useEffect(()=> {
 
-        let time = 1000 * 60 * 4
+        if (loading){
+            updateToken()
+        }
+
+        let time = 1000 * 60 * 5
         let interval = setInterval(()=> {
             if(authTokens){
                 updateToken()
@@ -80,7 +95,7 @@ export const AuthProvider = ({children}) => {
 
     return(
         <AuthContext.Provider value={contextData}>
-            { children }
+            { loading ? <p>Carregando...</p> : children }
         </AuthContext.Provider>
     )
 }
