@@ -11,8 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Mural = () => {
 
-    let {authTokens} = useContext(AuthContext);
-    let {user} = useContext(AuthContext);
+    let {authTokens, user} = useContext(AuthContext);
     const [selectedOption, setSelectedOption] = useState('activities');
     const [postText, setPostText] = useState('');
     const [activities, setActivities] = useState([]);

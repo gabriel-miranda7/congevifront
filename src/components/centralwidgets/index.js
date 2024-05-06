@@ -22,11 +22,12 @@ const CentralWidgets = () => {
           {calculateNextFriday()}
         </div>
       <div className='widget'>
-        <h3>Arquivos</h3>
+        <h3>Projetos ConGeVi</h3>
+        <Link to="/index/arquivos">Ver arquivos</Link>
       </div>
       <div className='widget'>
         <h3>Calendário</h3>
-        <Link to="/calendario">Ir até Calendário</Link>
+        <Link to="/index/calendario">Ir até Calendário</Link>
       </div>
     </CentralWidgetsBox>
   )

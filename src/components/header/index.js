@@ -7,10 +7,19 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { HeaderContainer } from './styled';
 
 const Header = () => {
-    let {authTokens, logoutUser, getProfilePic, profilePic} = useContext(AuthContext);
+    let {authTokens, logoutUser, getUserData } = useContext(AuthContext);
+    let [profilePic, setProfilePic] = useState('')
+    
     useEffect(() => {
-        getProfilePic();
-        },[])
+        const fetchData = async () => {
+          const userData = await getUserData();
+          if (userData) {
+            setProfilePic(userData.profile_pic_url);
+          }
+        };
+    
+        fetchData();
+      }, [getUserData]);
 
   return (
     <HeaderContainer>
