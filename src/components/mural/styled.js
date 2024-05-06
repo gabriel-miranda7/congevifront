@@ -26,6 +26,10 @@ export const MuralContainer = styled.div `
         margin-left: -5%;
         padding-bottom: 5px;
     }
+
+    .textbox{
+
+    }
     
     .activity {
         display: flex;
@@ -37,7 +41,7 @@ export const MuralContainer = styled.div `
         border-radius: 40px;
         margin-top: 2vh;
         width: 40vw;
-        box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     }
 
     span{
@@ -50,6 +54,7 @@ export const MuralContainer = styled.div `
     .inputPost {
         width: 20vw;
         padding: 5px 12px;
+        margin-right: 2%;
         font-size: 14px;
         line-height: 20px;
         color: #24292e;
@@ -67,5 +72,20 @@ export const MuralContainer = styled.div `
                 box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
             }
                 
+    }
+
+    .send {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .plane{
+        cursor: pointer;
+    }
+
+    .trash{
+        margin-right: 1%;
+        cursor: pointer;
     }
 `;

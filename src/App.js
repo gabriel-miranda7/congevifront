@@ -12,6 +12,7 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/auth" element={<LoginPage />} />
+            <Route path="" element={<LoginPage />} />
             <Route path="/index" element={<PrivateRoute />}>
               <Route path="dash" index element={<Dashboard />} />
             </Route>
