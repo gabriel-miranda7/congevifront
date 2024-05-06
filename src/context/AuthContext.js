@@ -11,9 +11,28 @@ export const AuthProvider = ({children}) => {
 
     let [authTokens, setAuthTokens] = useState(() => localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null);
     let [user, setUser] = useState(() => localStorage.getItem('authTokens') ? jwtDecode(localStorage.getItem('authTokens')) : null);
+    let [profilePic, setProfilePic] = useState(null)
     let [loading, setLoading] = useState(true)
 
     const navigate = useNavigate();
+
+    let getProfilePic = async () => {
+        console.log(authTokens.access)
+        try{
+            let response = await axios.get('auth/getmydata/', {
+                headers: {
+                    Authorization : `Bearer ${authTokens.access}`
+                    }
+                })
+                if(response.status === 200){
+                    setProfilePic(response.data.profile_pic);
+                }else if (response.statusText === 'Unauthorized'){
+                    logoutUser();
+                }
+            } catch(e){
+                console.log(e)
+            }
+        }
 
     let loginUser = async (e) => {
         e.preventDefault();
@@ -73,6 +92,8 @@ export const AuthProvider = ({children}) => {
     let contextData = {
         user:user,
         authTokens:authTokens,
+        profilePic:profilePic,
+        getProfilePic:getProfilePic,
         loginUser:loginUser,
         logoutUser:logoutUser,
     }

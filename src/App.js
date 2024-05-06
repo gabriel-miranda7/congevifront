@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/loginPage';
+import EditProfile from './pages/editProfile';
 import { AuthProvider } from './context/AuthContext';
 import Dashboard from './pages/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
@@ -15,6 +16,7 @@ function App() {
             <Route path="" element={<LoginPage />} />
             <Route path="/index" element={<PrivateRoute />}>
               <Route path="dash" index element={<Dashboard />} />
+              <Route path="editprofile" element={<EditProfile/>} />
             </Route>
           </Routes>
         </AuthProvider>

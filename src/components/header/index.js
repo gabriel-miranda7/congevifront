@@ -7,31 +7,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { HeaderContainer } from './styled';
 
 const Header = () => {
-    let {authTokens, logoutUser} = useContext(AuthContext);
-    const [profilePic, setProfilePic] = useState(null);
+    let {authTokens, logoutUser, getProfilePic, profilePic} = useContext(AuthContext);
     useEffect(() => {
-        let fetchData = async () => {
-            console.log(authTokens.access)
-            try{
-                let response = await axios.get('auth/getmydata/', {
-                    headers: {
-                        Authorization : `Bearer ${authTokens.access}`
-                    }
-                })
-
-                if(response.status === 200){
-                    setProfilePic(response.data.profile_pic);
-                }else if (response.statusText === 'Unauthorized'){
-                    logoutUser();
-                }
-            }catch(e){
-                console.log(e);
-            }
-            
-        } 
-
-        fetchData();
-    }, [authTokens])
+        getProfilePic();
+        },[])
 
   return (
     <HeaderContainer>
