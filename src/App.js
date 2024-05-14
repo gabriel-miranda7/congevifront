@@ -5,6 +5,7 @@ import EditProfile from './pages/editProfile';
 import { AuthProvider } from './context/AuthContext';
 import Dashboard from './pages/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
+import LandingPage from './pages/landingPage/styled';
 
 function App() {
   return (
@@ -13,11 +14,13 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/auth" element={<LoginPage />} />
-            <Route path="" element={<LoginPage />} />
+            <Route path="" element={<LandingPage/>} />
+
             <Route path="/index" element={<PrivateRoute />}>
               <Route path="dash" index element={<Dashboard />} />
               <Route path="editprofile" element={<EditProfile/>} />
             </Route>
+            
           </Routes>
         </AuthProvider>
       </Router>

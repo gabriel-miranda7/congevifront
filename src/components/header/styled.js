@@ -15,6 +15,43 @@ export const HeaderContainer = styled.div `
         transform: scale(1.2);
     }
 
+    .button {
+        font-family: Legacy;
+        border: 3px solid white;
+        color: white;
+        padding: 15px;
+        background-color: green;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        width: auto;
+
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }   
+
+    .button:hover {
+        color: green;
+        background-color: white;
+    }   
+
+    .navBar{
+        display: flex;
+        justify-content: space-around;
+        margin: 0 5% 0 5%;
+    }
+
+    .barraNav{
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+    }
+
+    nav{
+        font-family: Legacy;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
     .appBar {
         background-color: #4eb04e;
         height: 8vh;

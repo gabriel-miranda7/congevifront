@@ -4,8 +4,10 @@ import { ProfileForm } from './styled';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from '../../configs/axiosConfig';
+import { useNavigate } from 'react-router-dom';
 
 const EditProfile = () => {
+    const navigate = useNavigate();
     let { getUserData, authTokens } = useContext(AuthContext);
     const [userData, setUserData] = useState(null);
     let [profilePic, setProfilePic] = useState('');
@@ -60,12 +62,6 @@ const EditProfile = () => {
         setRole(event.target.value);
     }
 
-    const handleFileChangre = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            setProfilePic(file);
-        }
-    };
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
@@ -80,6 +76,7 @@ const EditProfile = () => {
     };
 
     const submitData = async (e) => {
+        e.preventDefault()
         try {
             const formData = new FormData();
             if(profilePic !== profilePicUrl){
@@ -95,7 +92,7 @@ const EditProfile = () => {
                     Authorization: `Bearer ${authTokens.access}`
                 }
             });
-            console.log(response.data); 
+            navigate('/index/dash');
         } catch (error) {
             console.log(error)
         }
@@ -110,7 +107,7 @@ const EditProfile = () => {
             <div className='profilePic'>
                 <p>Foto de perfil</p>
                 {profilePic && <img src={profilePicUrl}/>}
-                <input type='file' accept="image/*" onChange={(e) => handleFileChange(e)}/>
+                <input type='file' className='inputFoto' accept="image/*" onChange={(e) => handleFileChange(e)}/>
             </div>
             <div>
                 <p>Nome de usuário</p>
@@ -137,7 +134,7 @@ const EditProfile = () => {
                     <option value="bolsista">Bolsista</option>
                 </select>
             </div>
-            <button>Enviar</button>
+            <button className='button'>Enviar</button>
         </form>
     </div>
     </ProfileForm>

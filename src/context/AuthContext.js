@@ -17,7 +17,6 @@ export const AuthProvider = ({children}) => {
     const navigate = useNavigate();
 
     let getUserData = async () => {
-        console.log(authTokens.access)
         try{
             let response = await axios.get('auth/getmydata/', {
                 headers: {
@@ -87,7 +86,7 @@ export const AuthProvider = ({children}) => {
         setAuthTokens(null)
         setUser(null)
         localStorage.removeItem('authTokens')
-        navigate('/auth')
+        navigate('/')
     }
 
     let contextData = {

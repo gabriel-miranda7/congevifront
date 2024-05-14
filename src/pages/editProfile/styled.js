@@ -22,14 +22,41 @@ export const ProfileForm = styled.div `
         width: 100px;
     }
 
+    .inputFoto{
+        margin-top: 2%;
+    }
+
     .profilePic{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
         height: 30vh;
-        
     }
+
+    .button {
+        font-family: Legacy;
+        margin-top: 30px;
+        border: 3px solid green;
+        color: green;
+        outline: none;
+        padding: 18px 0;
+        background-color: white;
+        cursor: pointer;
+        font-size: 26px;
+        border-radius: 4px;
+        font-weight: 600;
+        width: 100%;
+        justify-self: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        margin-bottom: 40px;
+    }   
+    .button:hover{
+        background-color: green;
+        color: white;
+    }
+
+
 
     input:not([type='file']) {
         cursor: text;

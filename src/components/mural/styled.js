@@ -52,7 +52,8 @@ export const MuralContainer = styled.div `
     }
 
     .inputPost {
-        width: 20vw;
+        width: 30vw;
+        text-align: left;
         padding: 5px 12px;
         margin-right: 2%;
         font-size: 14px;
