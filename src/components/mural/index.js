@@ -12,9 +12,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const Mural = () => {
 
     let {authTokens, user} = useContext(AuthContext);
-    const [selectedOption, setSelectedOption] = useState('activities');
+    const [selectedOption, setSelectedOption] = useState(localStorage.getItem('option') ? localStorage.getItem('option') : 'activities');
     const [postText, setPostText] = useState('');
     const [activities, setActivities] = useState([]);
+    const [warns, setWarns] = useState([]);
     const [muralPopupOpen, setMuralPopupOpen] = useState(false);
     const [isActionBlocked, setIsActionBlocked] = useState(false);
 
@@ -22,16 +23,43 @@ const Mural = () => {
     const toggleOption = (option) => {
         if (selectedOption !== option) {
             setSelectedOption(option);
+            localStorage.setItem('option', option)
         }
     };
 
+    const submitWarn = async () => {
+        try {
+          let response = await axios.post('mural/warn/', {
+            content : postText
+          }, {
+            headers : {
+              Authorization: `Bearer ${authTokens.access}`
+            }
+          })
+          if (response.status === 201){
+            window.location.reload();
+          }
+        } catch(e){
+          console.log(e);
+        }
+      }
+
     const delActivitie = async (thingId) => {
         try {
-            let response = await axios.delete(`mural/del/${thingId}`, {
-                headers: {
-                    Authorization: `Bearer ${authTokens.access}`
-                }
-            });
+            let response;
+            if (selectedOption === 'activities'){
+                response = await axios.delete(`mural/delAc/${thingId}`, {
+                    headers: {
+                        Authorization: `Bearer ${authTokens.access}`
+                    }
+                });
+            }else if (selectedOption === 'warns'){
+                response = await axios.delete(`mural/delWa/${thingId}`, {
+                    headers: {
+                        Authorization: `Bearer ${authTokens.access}`
+                    }
+                });
+            }
             if (response.status === 204) {
                 window.location.reload();
             }
@@ -77,6 +105,14 @@ const Mural = () => {
                 if (activities_response.status === 200){
                     setActivities(activities_response.data)
                 }
+                let warns_response = await axios.get('mural/warn', {
+                    headers: {
+                        Authorization : `Bearer ${authTokens.access}`
+                    }
+                })
+                if (activities_response.status === 200){
+                    setWarns(warns_response.data)
+                }
             } catch(e){
                 console.log(e);
             }
@@ -89,7 +125,7 @@ const Mural = () => {
         <MuralContainer>
             <ToastContainer />
           <>
-          {muralPopupOpen && <SubmitPopup content={postText} muralPopupClose={changeMuralPopup} />}
+          {muralPopupOpen && selectedOption==='activities' && <SubmitPopup content={postText} muralPopupClose={changeMuralPopup} />}
                 <h1>Mural</h1>
             <div className='muralToggle'>
                 <p>
@@ -112,7 +148,7 @@ const Mural = () => {
                 (<div className='send'> 
                     <input className='inputPost' placeholder='Diga o que está acontecendo membro ConGeVi!'
                     type='textbox' maxLength={50} value={postText} onChange={(e) => setPostText(e.target.value)}/> 
-                    <SendIcon onClick={changeMuralPopup} className='plane'/> 
+                    <SendIcon onClick={selectedOption==='activities' ? changeMuralPopup : submitWarn} className='plane'/> 
                 </div>) : ''}
             </form>
             <div>
@@ -133,6 +169,27 @@ const Mural = () => {
                                         {activity.type === 'outro' && <p style={{color:'#bf36cf', fontSize:'20px'}}>Outro</p>}
                                         {activity.type === 'noticia' && <p style={{color:'#9E023B', fontSize:'20px'}}>Notícia</p>}
                                         
+                                        <p>{activity.author_first_name + ' ' + activity.author_last_name + ' disse,'}</p>
+                                        <p className='textbox'>{activity.content}</p>
+                                    </div>
+                                    {user['user_id'] === activity.author || user.staff ? <DeleteIcon onClick={() => delActivitie(activity.id)} className='trash'/> : ''}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+            
+            {selectedOption === 'warns' && (
+                        <div className='activity-box'>
+                            {warns.map(activity => (
+                                <div className='activity' key={activity.id}>
+                                    <div>
+                                        {activity.author_profile_picture !== null ? 
+                                        <img className='user-picture' src={activity.author_profile_picture}/> :
+                                        <img className='user-picture' src={placeholderpic}/>
+                                        }
+                                    </div>
+                                    <div className='activity-content'>
+                                        <p style={{color:'#E30000', fontSize:'20px'}}>*AVISO!*</p>
                                         <p>{activity.author_first_name + ' ' + activity.author_last_name + ' disse,'}</p>
                                         <p className='textbox'>{activity.content}</p>
                                     </div>

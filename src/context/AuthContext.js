@@ -11,7 +11,6 @@ export default AuthContext;
 export const AuthProvider = ({ children }) => {
     const cookies = new Cookies(); // Create a Cookies instance
     const [user, setUser] = useState(cookies.get('access_token') ? jwtDecode(cookies.get('access_token')) : null);
-    const [userData, setUserData] = useState([]);
     const [authTokens, setAuthTokens] = useState(cookies.get('access_token') && cookies.get('refresh_token') ? 
     {'access': cookies.get('access_token'), 'refresh' : cookies.get('refresh_token')} : null);
     const [loading, setLoading] = useState(true);
@@ -116,7 +115,6 @@ export const AuthProvider = ({ children }) => {
 
     const contextData = {
         user,
-        userData,
         authTokens,
         getUserData,
         loginUser,
