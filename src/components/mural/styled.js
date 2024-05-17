@@ -6,7 +6,7 @@ export const MuralContainer = styled.div `
     flex-direction: column;
     align-items: center;
     font-family: Legacy;
-    
+
     .user-picture {
         border-radius: 100%;
         width: 60px;
@@ -27,17 +27,14 @@ export const MuralContainer = styled.div `
         padding-bottom: 5px;
     }
 
-    .textbox{
-
-    }
     
     .activity {
         display: flex;
         align-items: center;
-        background-color: rgba(153, 153, 153, 0.2);
+        background-color: rgba(153, 153, 153, 0.1);
         padding: 10px;
         max-height: 10vh;
-        padding-left: 20px;
+        padding: 3%;
         border-radius: 40px;
         margin-top: 2vh;
         width: 40vw;

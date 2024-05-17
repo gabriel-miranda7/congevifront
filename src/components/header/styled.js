@@ -17,10 +17,10 @@ export const HeaderContainer = styled.div `
 
     .button {
         font-family: Legacy;
-        border: 3px solid white;
+        border: 1px solid white;
         color: white;
-        padding: 15px;
-        background-color: green;
+        padding: 1%;
+        background-color: transparent;
         cursor: pointer;
         border-radius: 4px;
         font-weight: 600;
@@ -50,6 +50,11 @@ export const HeaderContainer = styled.div `
         font-family: Legacy;
         font-size: 18px;
         cursor: pointer;
+        transition: color 0.2s ease;
+    }
+
+    nav:hover{
+        color: rgba(255,255,255,0.7);
     }
 
     .appBar {

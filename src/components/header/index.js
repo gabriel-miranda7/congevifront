@@ -64,7 +64,7 @@ const Header = () => {
             </>
           ) : (
             <button onClick={() => navigate('/auth')} className="button">
-              Fazer Login
+              Login
             </button>
           )}
         </Toolbar>
