@@ -1,16 +1,8 @@
-import React from 'react'
-import Header from '../../components/header';
-import Mural from '../../components/mural';
-import CentralWidgets from '../../components/centralwidgets';
+import styled from 'styled-components';
 
-const LandingPage = () => {
+export const LandingPageDiv = styled.div `
+    
 
 
-  return (
-    <div>
-      <Header/>
-    </div>
-  )
-}
 
-export default LandingPage;
+`;

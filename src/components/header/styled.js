@@ -5,6 +5,11 @@ export const HeaderContainer = styled.div `
     height: 8vh; 
     width: 100%; 
 
+    .logo{
+        width: 60px;
+        opacity: 0.7;
+    }
+
     .logoutIcon {
         margin-right: 3vw;
         cursor: pointer;
@@ -19,12 +24,11 @@ export const HeaderContainer = styled.div `
         font-family: Legacy;
         border: 1px solid white;
         color: white;
-        padding: 1%;
+        padding: 0.5% 1% 0.5% 1%;
         background-color: transparent;
         cursor: pointer;
         border-radius: 4px;
         font-weight: 600;
-        width: auto;
 
         transition: background-color 0.3s ease, color 0.3s ease;
     }   
@@ -42,13 +46,14 @@ export const HeaderContainer = styled.div `
 
     .barraNav{
         display: flex;
-        justify-content: space-around;
+        justify-content: end;
         width: 80%;
     }
 
     nav{
         font-family: Legacy;
         font-size: 18px;
+        padding: 0 1% 0 1%;
         cursor: pointer;
         transition: color 0.2s ease;
     }
@@ -58,7 +63,7 @@ export const HeaderContainer = styled.div `
     }
 
     .appBar {
-        background-color: #4eb04e;
+        background-color: #357960;
         height: 8vh;
         box-shadow: none;
         justify-content: center;

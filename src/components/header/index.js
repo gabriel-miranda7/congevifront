@@ -3,6 +3,7 @@ import { AppBar, Toolbar } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AuthContext from '../../context/AuthContext';
 import axios from '../../configs/axiosConfig';
+import logo from '../../media/logo/ConGeVi_logo.png'
 import LogoutIcon from '@mui/icons-material/Logout';
 import { HeaderContainer } from './styled';
 import { useNavigate } from 'react-router-dom';
@@ -11,6 +12,10 @@ const Header = () => {
   const navigate = useNavigate();
   const { user, logoutUser, getUserData } = useContext(AuthContext);
   const [profilePic, setProfilePic] = useState('');
+
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'center'});
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,14 +28,17 @@ const Header = () => {
     fetchData();
   }, [getUserData]);
 
+  
   return (
     <HeaderContainer>
       <AppBar className="appBar">
         <Toolbar className="navBar">
+          <img className='logo' src={logo}/>
           <div className='barraNav'>
-            <nav onClick={()=> navigate('/')}>Página inicial</nav>
-            <nav onClick={()=> navigate('/about')}>Quem somos</nav>
-            <nav onClick={()=> navigate('/contact')}>Contato</nav>
+            <nav onClick={()=> scrollToSection('inicio')}>Início</nav>
+            <nav onClick={()=> scrollToSection('pesquisa')}>Pesquisa</nav>
+            <nav onClick={()=> scrollToSection('about')}>Quem somos</nav>
+            <nav onClick={()=> scrollToSection('contato')}>Contato</nav>
             {user ? <nav onClick={()=> navigate('/index/dash')}>Dashboard</nav> : ''}
           </div>
           {user ? (
