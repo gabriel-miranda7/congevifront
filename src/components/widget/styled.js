@@ -14,17 +14,28 @@ export const WidgetStyle = styled.div `
     }
 
 
+    img {
+        width: 15vw;
+        height: 25vh;
+        padding-bottom: 2%;
+        transition: transform 0.4s ease;
+    }
+
+    img:hover {
+        transform: scale(1.2);
+    }
+
     .widget {
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: space-between;
         font-family: Legacy;
         padding-inline: 2vw;
-        padding-top: 10px;
-        padding-bottom: 20px;
+        padding: 10px 15px 3vw 15px;
         border-radius: 30px;
-        max-width: 20vw;
-        height: 50vh;
+        max-width: 25vw;
+        height: 60vh;
         background-color: rgba(173, 173, 173, 0.05);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }

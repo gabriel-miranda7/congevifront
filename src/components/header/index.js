@@ -14,7 +14,7 @@ const Header = () => {
   const [profilePic, setProfilePic] = useState('');
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'center'});
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'end'});
   };
 
   useEffect(() => {

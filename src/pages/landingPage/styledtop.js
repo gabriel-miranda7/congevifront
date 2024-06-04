@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const LandingTop = styled.div`
     font-family: Legacy;
     color: white;
+    width: 100vw;
 
     section {
         display: flex;
@@ -10,7 +11,7 @@ export const LandingTop = styled.div`
         flex-direction: column;
         background-color: #357960;
         width: 100vw;
-        height: 80vh;
+        height: 95vh;
         position: relative;
         overflow: hidden;
     }
@@ -36,6 +37,7 @@ export const LandingTop = styled.div`
     }
 
     img {
+        width: 100vw;
         animation: fadeIn 1s ease-out forwards;
     }
 
