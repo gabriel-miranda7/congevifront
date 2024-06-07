@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const LandingContato = styled.div `
     font-family: Legacy;
     width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 2% 0 2% 0;
     font-size: 28px;
 

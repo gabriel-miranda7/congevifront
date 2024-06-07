@@ -41,7 +41,7 @@ const LandingPage = () => {
             <Widget titulo={"Cultura Organizacional"} imagem={pessoasabraco} descricao={"O conjunto de valores, crenças e práticas compartilhadas por membros de uma organização. Molda comportamentos, influencia a tomada de decisões e define a identidade única de uma empresa."}/>
             <Widget titulo={"Gestão de pessoas"} imagem={pessoas} descricao={"A prática de administrar o capital humano de uma organização. Envolve recrutamento, desenvolvimento e motivação dos colaboradores para alcançar os objetivos da empresa."}/>
           </div>
-          <h2>e mais!</h2>
+          <h3>e mais!</h3>
         </section>  
       </LandingPesquisa>
 
@@ -63,6 +63,7 @@ const LandingPage = () => {
             </div>
               <input placeholder='E-Mail' type='email'/>
               <textarea placeholder='Sua mensagem...'/>
+              <button>Enviar</button>
           </form>
         </div>
      </section>

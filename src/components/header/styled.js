@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const HeaderContainer = styled.div `
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
     height: 8vh; 
     width: 100%; 
 

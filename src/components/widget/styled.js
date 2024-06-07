@@ -13,6 +13,9 @@ export const WidgetStyle = styled.div `
         font-size: 16px;
     }
 
+    h3 {
+        padding: 2%;
+    }
 
     img {
         width: 15vw;
@@ -34,8 +37,8 @@ export const WidgetStyle = styled.div `
         padding-inline: 2vw;
         padding: 10px 15px 3vw 15px;
         border-radius: 30px;
-        max-width: 25vw;
-        height: 60vh;
+        width: 23vw;
+        height: 50vh;
         background-color: rgba(173, 173, 173, 0.05);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }

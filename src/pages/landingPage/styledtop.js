@@ -11,7 +11,7 @@ export const LandingTop = styled.div`
         flex-direction: column;
         background-color: #357960;
         width: 100vw;
-        height: 95vh;
+        height: 100vh;
         position: relative;
         overflow: hidden;
     }
@@ -19,6 +19,7 @@ export const LandingTop = styled.div`
     div {
         display: flex;
         flex-direction: column;
+        margin-top: 2%;
     }
 
     h1 {
