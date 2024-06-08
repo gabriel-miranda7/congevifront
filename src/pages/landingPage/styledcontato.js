@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const LandingContato = styled.div `
     font-family: Legacy;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

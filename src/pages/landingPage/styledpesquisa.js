@@ -5,7 +5,6 @@ export const LandingPesquisa = styled.div`
     font-size: 34px;
     display: flex;
     flex-direction: column;
-
     height: 100vh;
     margin-bottom: 15px;
 
@@ -15,8 +14,12 @@ export const LandingPesquisa = styled.div`
     }
 
     h2 {
-        margin-top: 5px;
+        margin-top: 0;
         margin-bottom: 15px;
+    }
+
+    .more{
+        font-size: 24px;
     }
 
     .header{

@@ -8,9 +8,15 @@ export const HeaderContainer = styled.div `
     z-index: 1000;
     height: 8vh; 
     width: 100%; 
+    transition: top 3s ease-in-out;
+
+    .hidden {
+        top: -15vh;
+        transition: top 0.3s ease-in-out;
+    }
 
     .logo{
-        width: 60px;
+        width: 60px;  
         opacity: 0.7;
     }
 
@@ -57,7 +63,7 @@ export const HeaderContainer = styled.div `
     nav{
         font-family: Legacy;
         font-size: 18px;
-        padding: 0 1% 0 1%;
+        padding: 1%;
         cursor: pointer;
         transition: color 0.2s ease;
     }
@@ -71,6 +77,7 @@ export const HeaderContainer = styled.div `
         height: 8vh;
         box-shadow: none;
         justify-content: center;
+        transition: top 0.3s ease-in-out;
     }
 
 `;

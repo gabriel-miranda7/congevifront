@@ -12,6 +12,8 @@ const Header = () => {
   const navigate = useNavigate();
   const { user, logoutUser, getUserData } = useContext(AuthContext);
   const [profilePic, setProfilePic] = useState('');
+  const [isHidden, setIsHidden] = useState(false);
+  let lastScrollTop = 0;
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'center'});
@@ -28,10 +30,28 @@ const Header = () => {
     fetchData();
   }, [getUserData]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        setIsHidden(true);
+      } else {
+        // Scrolling up
+        setIsHidden(false);
+      }
+      lastScrollTop = scrollTop;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   
   return (
     <HeaderContainer>
-      <AppBar className="appBar">
+      <AppBar className={isHidden ? 'appBar hidden' : 'appBar'}>
         <Toolbar className="navBar">
           <img className='logo' src={logo}/>
           <div className='barraNav'>
