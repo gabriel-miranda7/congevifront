@@ -80,4 +80,21 @@ export const HeaderContainer = styled.div `
         transition: top 0.3s ease-in-out;
     }
 
+    .menuMobile{
+        display: none;
+    }
+
+    .drawer{
+        background-color: #357960;
+    }
+
+    @media (max-width: 1200px) {
+    .menuDesktop {
+        display: none;
+    }
+    .menuMobile{
+        display: flex;
+    }
+}
+
 `;

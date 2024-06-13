@@ -52,6 +52,7 @@ export const LandingContato = styled.div `
     input[type='email']{
         width: 30vw;
         margin-bottom: 5%;
+        border: 1px solid black;
     }
 
     textarea {

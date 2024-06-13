@@ -25,7 +25,7 @@ const LandingPage = () => {
           <h1>ConGeVi</h1>
           <h2>Somos um grupo de pesquisa em Contexto de Trabalho,<br/> Gestão de pessoas & Vínculos organizacionais composto<br/> por cientistas sociais, professores e alunos.</h2>
         </div>
-        <img src={wave}/>
+        <img className='wave' src={wave}/>
         <div className="pixel-animation">
           {[...Array(100)].map((_, i) => <span key={i} className="pixel"></span>)}
         </div>
@@ -48,7 +48,7 @@ const LandingPage = () => {
       </LandingPesquisa>
 
      <LandingSobre>
-      <section id='about'>
+      <section id='quemsomos'>
         <h2>Sobre nós</h2>
         <p>Ana Paula Moreno Pinho <br/>Coordenadora do PPAC e Gestora do grupo</p>
       </section>

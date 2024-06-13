@@ -35,7 +35,7 @@ export const LandingPesquisa = styled.div`
         justify-content: space-around;
     }
 
-    @media (max-width: 1200px) {
+  @media (max-width: 1200px) {
     .widgets {
       display: grid;
       margin-top: 20px;

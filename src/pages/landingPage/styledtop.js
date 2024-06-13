@@ -109,4 +109,41 @@ export const LandingTop = styled.div`
     .pixel:nth-child(10n+8) { left: 80%; animation-duration: 12s; }
     .pixel:nth-child(10n+9) { left: 90%; animation-duration: 10s; }
     .pixel:nth-child(10n+10) { left: 100%; animation-duration: 11s; }
+
+    @media (max-width: 1200px) {
+        h1 {
+            font-size: 90px;
+        }
+        h2 {
+            font-size: 30px;
+            
+        }
+        section {
+            justify-content: space-between;
+            align-items: center;
+        }
+        .textocentral {
+            width: 80vw;
+    }
+  }
+
+  @media (max-width: 668px) {
+        h1 {
+            font-size: 70px;
+        }
+        h2 {
+            font-size: 25px;
+            
+        }
+        section {
+            justify-content: center;
+            align-items: center;
+        }
+        .wave{
+            display: none;
+        }
+        .textocentral {
+            width: 85vw;
+    }
+  }
 `;
