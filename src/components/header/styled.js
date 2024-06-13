@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div `
 
     .hidden {
         top: -15vh;
-        transition: top 0.3s ease-in-out;
+        transition: top 0.1s ease-in-out;
     }
 
     .logo{
@@ -23,7 +23,7 @@ export const HeaderContainer = styled.div `
     .logoutIcon {
         margin-right: 3vw;
         cursor: pointer;
-        transition: transform 0.3s ease;
+        transition: transform 0.1s ease;
     }
 
     .logoutIcon:hover{

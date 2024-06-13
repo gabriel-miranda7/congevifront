@@ -7,7 +7,7 @@ export const LandingContato = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 2% 0 2% 0;
+    
     font-size: 28px;
 
     @keyframes slideInFromLeft {

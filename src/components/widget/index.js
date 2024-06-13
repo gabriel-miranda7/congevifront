@@ -1,19 +1,20 @@
 import React from 'react';
 import { WidgetStyle } from './styled';
-import { Link } from 'react-router-dom'; 
 
-const Widget = ({titulo, imagem, descricao}) => {
-
-
+const Widget = ({ titulo, imagem, descricao }) => {
   return (
     <WidgetStyle>
-        <div className='widget'>
+      <div className='widget'>
+        <div className='titlesection'>
           <h3>{titulo}</h3>
-          <img src={imagem}/>
+        </div>
+        <img src={imagem} alt={titulo} />
+        <div className='textsection'>
           <p>{descricao}</p>
         </div>
+      </div>
     </WidgetStyle>
-  )
-}
+  );
+};
 
 export default Widget;

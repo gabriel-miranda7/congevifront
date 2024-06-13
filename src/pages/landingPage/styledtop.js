@@ -42,6 +42,10 @@ export const LandingTop = styled.div`
         animation: fadeIn 1s ease-out forwards;
     }
 
+    .textocentral {
+        margin-top: 5%;
+    }
+
     @keyframes slideInFromTop {
         0% {
             transform: translateY(-60%);
@@ -61,6 +65,7 @@ export const LandingTop = styled.div`
             opacity: 1;
         }
     }
+
 
     .pixel-animation {
         position: absolute;
