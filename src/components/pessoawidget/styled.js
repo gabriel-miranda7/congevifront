@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WidgetStyle = styled.div`
+export const WidgetPessoaStyle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,11 +11,11 @@ export const WidgetStyle = styled.div`
   
 
   p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif, Helvetica, sans-serif;
-    font-size: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
     font-weight: 400;
+    padding-bottom: 5%;
     text-align: center; 
-    margin: 5px;
     line-height: 1.5;
     overflow-wrap: break-word;
     display: -webkit-box;
@@ -25,22 +25,16 @@ export const WidgetStyle = styled.div`
   }
 
   h3 {
-    font-size: 2vw;
+    font-size: 1.5vw;
   }
 
   img {
-    width: 160px;
-    height: 160px;
-    transition: transform 0.4s ease;
-  }
-
-  img:hover {
-    transform: scale(1.1);
+    transform: scale(0.5);
+    border-radius: 100%;
   }
 
   .titlesection {
-    width: 90%;
-    word-wrap: break-word;
+    width: fit-content;
     text-align: center;
   }
 
@@ -60,10 +54,9 @@ export const WidgetStyle = styled.div`
     justify-content: space-around;
     font-family: Legacy;
     width: 18vw;
-    padding: 10px 2vw;
     border-radius: 10px;
     height: fit-content;
-    background-color: rgba(173, 187, 218, 0.2);
+    background-color: #2F6A54;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     min-height: 450px;
     transition: background-color 0.5s ease;
@@ -73,9 +66,9 @@ export const WidgetStyle = styled.div`
     background-color: rgba(173, 187, 218, 0.5);;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 768px) {
     .widget {
-      width: 40vw;
+      width: 30vw;
     }
 
     h3 {
@@ -83,15 +76,6 @@ export const WidgetStyle = styled.div`
     }
   }
 
-  @media (max-width: 668px) {
-    .widget {
-      width: 80vw;
-      padding: 1px 2vw;
-    }
-
-    h3 {
-      font-size: 8vw;
-    }
-  }
+  
 
 `;
