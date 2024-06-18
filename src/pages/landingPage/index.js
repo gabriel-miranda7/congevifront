@@ -65,12 +65,7 @@ const LandingPage = () => {
         </section>  
       </LandingPesquisa>
 
-     <LandingSobre>
-     <section id='quemsomos'>
-            <h2>Nossa equipe</h2>
-            
-        </section>
-     </LandingSobre>
+    
 
      <LandingContato>
      <section id='contato'>

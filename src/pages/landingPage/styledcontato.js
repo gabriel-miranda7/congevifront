@@ -9,6 +9,8 @@ export const LandingContato = styled.div `
     justify-content: center;
     margin-top: 3vh;
     font-size: 28px;
+    color: white;
+    background-color: #357960;
 
     @keyframes slideInFromLeft {
         0% {
@@ -41,18 +43,17 @@ export const LandingContato = styled.div `
     input {
         font-size: 13px;
         font-weight: 600;
-        background-color: transparent;
         border-radius: 10px;
         margin: 0 15px 0 15px;
         width: 20vw;
-        border: 1px solid black;
+        border: 0px solid black;
         padding: 15px;
     }
 
     input[type='email']{
         width: 30vw;
         margin-bottom: 5%;
-        border: 1px solid black;
+        border: 0px solid black;
     }
 
     button {
@@ -60,8 +61,8 @@ export const LandingContato = styled.div `
         font-family: Legacy;
         padding: 10px 15% 10px 15%;
         margin-top: 5%;
-        background-color: #357960;
-        color: white;
+        background-color: white;
+        color: black;
         border: 1px solid black;
         border-radius: 20px;
 
@@ -69,8 +70,8 @@ export const LandingContato = styled.div `
     }
 
     button:hover {
-        color: black;
-        background-color: white;
+        color: white;
+        background-color: #357960;
     }
 
     textarea {
@@ -115,7 +116,7 @@ export const LandingContato = styled.div `
     input[type='email']{
         width: 60vw;
         margin-bottom: 10%;
-        border: 1px solid black;
+
     }
   }    
 

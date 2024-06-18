@@ -68,7 +68,7 @@ const Header = () => {
 
   const menuItems = (
     <List>
-      {['Início', 'Pesquisa', 'Quem somos', 'Contato'].map((text) => (
+      {['Início', 'Pesquisa', 'Contato'].map((text) => (
         <ListItem button key={text} onClick={() => {
           scrollToSectionMobile(normalizeText(text));
           toggleDrawer(false)();
@@ -96,7 +96,6 @@ const Header = () => {
           <div className='barraNav menuDesktop'>
             <nav onClick={()=> scrollToSection('inicio')}>Início</nav>
             <nav onClick={()=> scrollToSection('pesquisa')}>Pesquisa</nav>
-            <nav onClick={()=> scrollToSection('quemsomos')}>Quem somos</nav>
             <nav onClick={()=> scrollToSection('contato')}>Contato</nav>
             {user ? <nav onClick={()=> navigate('/index/dash')}>Dashboard</nav> : ''}
           </div>
@@ -108,40 +107,7 @@ const Header = () => {
               {menuItems}
             </Drawer>
           </div>
-          {user ? (
-            <>
-              {profilePic ? (
-                <img
-                  src={profilePic}
-                  onClick={() => navigate('/index/editprofile')}
-                  alt="Profile Pic"
-                  style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '50%',
-                    marginLeft: 'auto',
-                    marginRight: '3vw',
-                    cursor: 'pointer'
-                  }}
-                />
-              ) : (
-                <AccountCircleIcon
-                  onClick={() => navigate('/index/editprofile')}
-                  sx={{
-                    marginLeft: 'auto',
-                    transform: 'scale(1.8)',
-                    marginRight: '3vw',
-                    cursor: 'pointer'
-                  }}
-                />
-              )}
-              <LogoutIcon onClick={logoutUser} className="logoutIcon" />
-            </>
-          ) : (
-            <button onClick={() => navigate('/auth')} className="button">
-              Login
-            </button>
-          )}
+          
         </Toolbar>
       </AppBar>
     </HeaderContainer>
