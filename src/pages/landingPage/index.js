@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/header';
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LandingSobre } from './styledsobre';
 import { LandingTop } from './styledtop';
 import wave from '../../media/assets/wave.svg';
@@ -12,24 +12,20 @@ import { LandingPesquisa } from './styledpesquisa';
 import Widget from '../../components/widget';
 import { LandingContato } from './styledcontato';
 import emailjs from 'emailjs-com';
-import profa from '../../media/assets/profa.jpg'
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
-import WidgetPessoa from '../../components/pessoawidget';
+
 
 const LandingPage = () => {
-
+    const [messageStatus, setMessageStatus] = useState('');
 
     const sendEmail = (e) => {
       e.preventDefault();
   
       emailjs.sendForm('service_ayxdo4q', 'template_wlu9d1i', e.target, 'y_jsgtk_DJxCK4xV5')
         .then((result) => {
-          console.log(result.text);
-          alert("Mensagem enviada com sucesso!");
+          setMessageStatus('Mensagem enviada com sucesso!');
         }, (error) => {
           console.log(error.text);
-          alert("Ocorreu um erro ao enviar a mensagem.");
+          setMessageStatus('Ocorreu um erro ao enviar a mensagem.');
         });
   
       e.target.reset(); // Reseta o formulário após o envio
@@ -44,7 +40,7 @@ const LandingPage = () => {
           <h1>ConGeVi</h1>
           <h2>Somos um grupo de pesquisa em Contexto de Trabalho,<br/> Gestão de pessoas & Vínculos organizacionais composto<br/> por cientistas sociais, professores e alunos.</h2>
         </div>
-        <img className='wave' src={wave}/>
+        <img className='wave' alt='green wave' src={wave}/>
         <div className="pixel-animation">
           {[...Array(100)].map((_, i) => <span key={i} className="pixel"></span>)}
         </div>
@@ -69,25 +65,7 @@ const LandingPage = () => {
      <LandingSobre>
      <section id='quemsomos'>
             <h2>Nossa equipe</h2>
-            <Carousel       className='carrossel'
-                            showArrows={true}
-                            showThumbs={false}
-                            infiniteLoop={true}
-                            showStatus={false}
-                            showIndicators={false}
-                            centerMode={true}
-                            centerSlidePercentage={25} // Ajuste para definir o tamanho dos slides
-                            swipeScrollTolerance={50} // Tolerância para permitir a rolagem do swipe
-                            
-                        >
-                        
-            <div className="slide">
-                <WidgetPessoa nome={"Dra. Ana Paula Pinho"} descricao={"Coordenadora do PPAC"} imagem={profa}/>
-            </div>
-            <div className="slide">
-                <WidgetPessoa nome={"teste"} descricao={"Coordenadora do PPAC"} imagem={profa}/>
-            </div>
-            </Carousel>
+              
         </section>
      </LandingSobre>
 
@@ -95,7 +73,6 @@ const LandingPage = () => {
      <section id='contato'>
         <h2>Entre em contato conosco!</h2>
         <div className='container'>
-          
           <form onSubmit={sendEmail}>
             <div className='inputsuperior'>
               <input placeholder='Nome' type='text' name='name' required/>
@@ -103,7 +80,8 @@ const LandingPage = () => {
             </div>
               <input placeholder='Seu E-Mail' type='email' name='email' required/>
               <textarea placeholder='Sua mensagem...' name='message' required/>
-              <button>Enviar</button>
+              {!messageStatus && <button>Enviar</button>}
+              {messageStatus && <p>{messageStatus}</p>}
           </form>
         </div>
      </section>

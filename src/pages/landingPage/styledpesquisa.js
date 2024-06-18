@@ -7,7 +7,6 @@ export const LandingPesquisa = styled.div`
     flex-direction: column;
     justify-content: center;
     height: fit-content;
- 
 
     h3 {
         margin-bottom: 3%;

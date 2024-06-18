@@ -4,7 +4,6 @@ export const LandingTop = styled.div`
     font-family: Legacy;
     color: white;
     width: 100vw;
-
     section {
         display: flex;
         justify-content: space-between;

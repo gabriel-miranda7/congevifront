@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const LandingContato = styled.div `
     font-family: Legacy;
     width: 100vw;
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    margin-top: 3vh;
     font-size: 28px;
 
     @keyframes slideInFromLeft {
@@ -44,7 +44,7 @@ export const LandingContato = styled.div `
         background-color: transparent;
         border-radius: 10px;
         margin: 0 15px 0 15px;
-        width: 15vw;
+        width: 20vw;
         border: 1px solid black;
         padding: 15px;
     }
@@ -55,12 +55,30 @@ export const LandingContato = styled.div `
         border: 1px solid black;
     }
 
+    button {
+        cursor: pointer;
+        font-family: Legacy;
+        padding: 10px 15% 10px 15%;
+        margin-top: 5%;
+        background-color: #357960;
+        color: white;
+        border: 1px solid black;
+        border-radius: 20px;
+
+        transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    button:hover {
+        color: black;
+        background-color: white;
+    }
+
     textarea {
         padding: 5px;
         width: 90%;
         border-radius: 10px;
         height: 15vh;
-        resize: vertical;
+        resize: none;
     }
 
     .inputsuperior {
@@ -77,7 +95,29 @@ export const LandingContato = styled.div `
         align-items: center;
     }
 
-    
+    @media (max-width: 1200px) {
+    input { 
+        width: 25vw;
+    }
+  }
+
+  @media (max-width: 668px) {
+    .inputsuperior {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    input {
+        width: 60vw;
+        margin: 5%;
+    }
+    input[type='email']{
+        width: 60vw;
+        margin-bottom: 10%;
+        border: 1px solid black;
+    }
+  }    
 
 
 
