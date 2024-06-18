@@ -79,7 +79,7 @@ const LandingPage = () => {
         <div className='container'>
           <form onSubmit={sendEmail}>
             <div className='inputsuperior'>
-              <input placeholder='Nome' type='text' name='name' required/>
+              <input placeholder='Nome' minLength={3} maxLength={20} type='text' name='name' required/>
               <input placeholder='Telefone com DDD' type='text' name='phone' onInput={handlePhoneInput} required/>
             </div>
               <input placeholder='Seu E-Mail' type='email' name='email' required/>

@@ -7,6 +7,7 @@ import Dashboard from './pages/dashboard';
 import PrivateRoute from './utils/PrivateRoute';
 import LandingPage from './pages/landingPage/index';
 
+
 function App() {
   return (
     <div className="App">
