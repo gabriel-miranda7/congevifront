@@ -128,10 +128,10 @@ export const LandingTop = styled.div`
 
   @media (max-width: 668px) {
         h1 {
-            font-size: 70px;
+            font-size: 55px;
         }
         h2 {
-            font-size: 25px;
+            font-size: 20px;
             
         }
         section {

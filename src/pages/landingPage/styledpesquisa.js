@@ -13,7 +13,7 @@ export const LandingPesquisa = styled.div`
     }
 
     h2 {
-        margin-top: 0;
+        margin-top: 10px;
         margin-bottom: 15px;
     }
 
@@ -44,6 +44,7 @@ export const LandingPesquisa = styled.div`
   }
 
   @media (max-width: 668px) {
+    align-items: center;
     .widgets {
       display: grid;
       margin-top: 20px;
@@ -55,6 +56,9 @@ export const LandingPesquisa = styled.div`
     }
     h3 {
         margin-bottom: 8%;
+    }
+    h2 {
+      font-size: 30px;
     }
   }
 
