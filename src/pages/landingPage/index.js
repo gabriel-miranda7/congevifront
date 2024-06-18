@@ -33,6 +33,12 @@ const LandingPage = () => {
       e.target.reset(); // Reseta o formulário após o envio
       }
 
+      const handlePhoneInput = (e) => {
+        const { value } = e.target;
+        e.target.value = value.replace(/\D/g, '');
+      }
+    
+
     
   return (
     <>
@@ -74,7 +80,7 @@ const LandingPage = () => {
           <form onSubmit={sendEmail}>
             <div className='inputsuperior'>
               <input placeholder='Nome' type='text' name='name' required/>
-              <input placeholder='Telefone com DDD' type='text' name='phone' required/>
+              <input placeholder='Telefone com DDD' type='text' name='phone' onInput={handlePhoneInput} required/>
             </div>
               <input placeholder='Seu E-Mail' type='email' name='email' required/>
               <textarea placeholder='Sua mensagem...' name='message' required/>
