@@ -12,6 +12,8 @@ import { LandingPesquisa } from './styledpesquisa';
 import Widget from '../../components/widget';
 import { LandingContato } from './styledcontato';
 import emailjs from 'emailjs-com';
+import WidgetPessoa from '../../components/pessoawidget';
+
 
 
 const LandingPage = () => {
@@ -31,6 +33,7 @@ const LandingPage = () => {
       e.target.reset(); // Reseta o formulário após o envio
       }
 
+    
   return (
     <>
       <Header/>
@@ -65,7 +68,7 @@ const LandingPage = () => {
      <LandingSobre>
      <section id='quemsomos'>
             <h2>Nossa equipe</h2>
-              
+            
         </section>
      </LandingSobre>
 
